@@ -21,6 +21,27 @@
       "prompt": "combat_console_hud.gd 已经 283 行了，感觉还在不断膨胀，帮我从架构角度看看是不是该拆分了。",
       "expected_output": "应使用聚焦审查，参考 TECH_DECISION.md 中的'延迟抽象'原则来务实判断是否需要拆分。跳过无关审查项。",
       "files": []
+    },
+    {
+      "id": 4,
+      "name": "speed-check-safe-config-change",
+      "prompt": "[arch-guardian 变更影响速检] 当前修改文件: scripts/config/visual_config.gd | 累计变更 1 个文件 | 涉及目录: scripts\n修改了 visual_config.gd 中 idle 状态的颜色默认值。",
+      "expected_output": "应静默通过，不输出任何提示。变更在配置层职责范围内，无跨层依赖，无接口变更。",
+      "files": []
+    },
+    {
+      "id": 5,
+      "name": "speed-check-cross-layer-dependency",
+      "prompt": "[arch-guardian 变更影响速检] 当前修改文件: scripts/entities/enemy_fleet.gd | 累计变更 1 个文件 | 涉及目录: scripts\nenemy_fleet.gd 的 take_damage() 中新增了 get_tree().get_first_node_in_group('combat_console') 直接调用 UI 层方法。",
+      "expected_output": "应输出'需关注'级别的简短提示，指出实体层直接引用 UI 层违反松耦合协作约定，建议改用信号模式。",
+      "files": []
+    },
+    {
+      "id": 6,
+      "name": "speed-check-multi-module-interface-change",
+      "prompt": "[arch-guardian 变更影响速检] 当前修改文件: scripts/battle/projectile_manager.gd | 累计变更 3 个文件 | 涉及目录: scripts\n修改了 combat_controller.gd 的 fire 信号签名（新增 priority 和 is_burst 参数），同时联动修改了 battle_scene.gd 和 projectile_manager.gd。",
+      "expected_output": "应输出'建议审查'级别的警告，指出核心信号接口变更涉及多模块联动，存在职责越界风险，建议执行完整架构审查。",
+      "files": []
     }
   ]
 }
