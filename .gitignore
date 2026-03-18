@@ -1,6 +1,9 @@
 # 工作空间
 arch-guardian-workspace/
 
+# Skill 压缩包
+*.skill
+
 # Python
 __pycache__/
 *.pyc
