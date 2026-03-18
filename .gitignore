@@ -1,0 +1,13 @@
+# 工作空间
+arch-guardian-workspace/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/

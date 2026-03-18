@@ -1,0 +1,26 @@
+{
+  "skill_name": "arch-guardian",
+  "evals": [
+    {
+      "id": 1,
+      "name": "design-review-achievement-system",
+      "prompt": "我打算给游戏新增一个成就系统（Achievement System）。玩家完成特定条件时解锁成就，成就数据持久化到本地。请从架构角度评估这个设计。",
+      "expected_output": "应执行知识发现，找到 TECH_DECISION.md 并引用其中的架构原则（延迟抽象、声明式优先、松耦合协作等）来评估成就系统设计。设计审查模式，组件层跳过。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "impl-review-combat-controller-refactor",
+      "prompt": "最近我把战斗逻辑从 InputSystem 中提取到了新的 CombatController，请审查一下这次重构的架构质量。",
+      "expected_output": "应对照 TECH_DECISION.md 中的'职责边界清晰'、'松耦合协作'等原则审查重构质量。实现审查模式，标准深度。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "focused-review-hud-bloat",
+      "prompt": "combat_console_hud.gd 已经 283 行了，感觉还在不断膨胀，帮我从架构角度看看是不是该拆分了。",
+      "expected_output": "应使用聚焦审查，参考 TECH_DECISION.md 中的'延迟抽象'原则来务实判断是否需要拆分。跳过无关审查项。",
+      "files": []
+    }
+  ]
+}
